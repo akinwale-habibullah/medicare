@@ -2,6 +2,15 @@ import React from 'react';
 import './ListMedicalRecords.css';
 
 function ListMedicalRecords(props) {
+  const medicalRecordRows = props.medicalRecords.map((item, index) => {
+    return <tr id={index}>
+      <th scope="row">{`${item.firstName}, ${ item.lastName}`}</th>
+      <td>{item.gender}</td>
+      <td>{item.age}</td>
+      <td>{`${item.country} (${item.city})`}</td>
+    </tr>
+  });
+
   return (
     <div className="">
       <div className="row">
@@ -30,24 +39,7 @@ function ListMedicalRecords(props) {
           </thead>
           
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            {medicalRecordRows}
           </tbody>
       </table>
       </div>
