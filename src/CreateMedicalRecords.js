@@ -19,10 +19,7 @@ class CreateMedicalRecords extends React.Component {
   }
 
   updateState(e) {
-    console.log(e.target.name);
-
     const val = e.target.value;
-    console.log(e.target.value);
     const elementName = e.target.name;
     this.setState((state, props) => ({
       [elementName]: `${val}`
@@ -126,7 +123,7 @@ class CreateMedicalRecords extends React.Component {
                 <label className="form-check-label" htmlFor="liv-with-diab-no">No</label>
               </div>
               <div className="form-check form-check-inline">
-                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="liv-with-diab-unknwn" value="unknown" onChange={this.updateState} checked="checked"/>
+                <input className="form-check-input" type="radio" name="inlineRadioOptions" id="liv-with-diab-unknwn" value="unknown" onChange={this.updateState}/>
                 <label className="form-check-label" htmlFor="liv-with-diab-unknwn">Unknown</label>
               </div>
             </div>
