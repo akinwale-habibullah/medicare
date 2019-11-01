@@ -22,7 +22,7 @@ class ListMedicalRecords extends React.Component{
     let medicalRecordRows 
     if(this.state.filter){
       medicalRecordRows = this.props.medicalRecords.filter(item => item.age <= 18).map((item, index) => {
-        return <tr id={index}>
+        return <tr key={index}>
           <th scope="row">{`${item.firstName}, ${ item.lastName}`}</th>
           <td>{item.gender}</td>
           <td>{item.age}</td>
@@ -31,7 +31,7 @@ class ListMedicalRecords extends React.Component{
       });
     } else {
       medicalRecordRows = this.props.medicalRecords.map((item, index) => {
-        return <tr id={index}>
+        return <tr key={index}>
           <th scope="row">{`${item.firstName}, ${ item.lastName}`}</th>
           <td>{item.gender}</td>
           <td>{item.age}</td>
