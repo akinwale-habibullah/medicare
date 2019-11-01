@@ -82,8 +82,8 @@ class CreateMedicalRecords extends React.Component {
 
           <div className="form-row">
             <div className="form-group col-md-6">
-            <select className="custom-select" name="city" onChange={this.updateState} required>
-              <option value={null} selected>Open this select menu</option>
+            <select className="custom-select" name="city" onChange={this.updateState} value={this.state.city} required>
+              <option value={null}>Open this select menu</option>
               <option value="lagos">Lagos</option>
               <option value="Benue">Benue</option>
               <option value="Adamawa">Adamawa</option>
@@ -95,8 +95,8 @@ class CreateMedicalRecords extends React.Component {
             </select>
             </div>
             <div className="form-group col-md-6">
-            <select className="custom-select" name="country" onChange={this.updateState} required>
-              <option value={null} selected>Open this select menu</option>
+            <select className="custom-select" name="country" onChange={this.updateState} value={this.state.country} required>
+              <option value={null}>Open this select menu</option>
               <option value="Nigeria">Nigeria</option>
               <option value="Cameroun">Cameroun</option>
               <option value="Senegal">Senegal</option>
