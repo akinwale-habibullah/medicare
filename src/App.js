@@ -4,6 +4,7 @@ import 'jquery';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min';
 import CreateMedicalRecords from './CreateMedicalRecords';
+import ListMedicalRecords from './ListMedicalRecords';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 
       <hr />
 
+      <ListMedicalRecords />
 
     </div>
   );
