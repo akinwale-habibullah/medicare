@@ -7,17 +7,40 @@ import CreateMedicalRecords from './CreateMedicalRecords';
 import ListMedicalRecords from './ListMedicalRecords';
 import './App.css';
 
-function App() {
-  return (
-    <div className="container">
-      <CreateMedicalRecords />
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      medicalRecords : [],
+      medicalRecord: {
+        firstName: '',
+        lastName: '',
+        gender: '',
+        age: 1,
+        lwd: false,
+      }
+    }
 
-      <hr />
+    this.addMedicalRecord = this.addMedicalRecord.bind(this);
+  }
 
-      <ListMedicalRecords />
-
-    </div>
-  );
+  addMedicalRecord(medRecord){
+    this.setState((state, props) => ({
+      medicalRecords: [...state.medicalRecords, medRecord]
+    }));
+  }
+  render(){
+    return (
+      <div className="container">
+        <CreateMedicalRecords addMedicalRecord={this.addMedicalRecord}/>
+  
+        <hr />
+  
+        <ListMedicalRecords medicalRecords={this.state.medicalRecords}/>
+  
+      </div>
+    );
+  }
 }
 
 export default App;
